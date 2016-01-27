@@ -28,11 +28,14 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "flexboxgrid": "^6.3.0",
+    "material-ui": "^0.14.2",
     "react": "0.14.x",
     "react-dom": "0.14.x",
     "react-komposer": "1.x.x",
+    "react-mounter": "1.x.x",
     "react-simple-di": "1.x.x",
-    "react-mounter": "1.x.x"
+    "react-tap-event-plugin": "^0.2.1"
   },
   "private": true
 }
