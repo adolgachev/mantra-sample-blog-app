@@ -16,7 +16,8 @@ export const initRoutes = (context, actions) => {
     name: 'posts.list',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<PostList />)
+        content: () => (<PostList />),
+        title: 'Posts'
       });
     }
   });
@@ -25,7 +26,8 @@ export const initRoutes = (context, actions) => {
     name: 'posts.single',
     action({postId}) {
       mount(MainLayoutCtx, {
-        content: () => (<Post postId={postId}/>)
+        content: () => (<Post postId={postId}/>),
+        title: 'Post'
       });
     }
   });
@@ -34,7 +36,8 @@ export const initRoutes = (context, actions) => {
     name: 'newpost',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NewPost/>)
+        content: () => (<NewPost/>),
+        title: 'Add New Post'
       });
     }
   });

@@ -12,11 +12,10 @@ class NewPost extends React.Component {
         onInvalid={this.disableButton}
         onValidSubmit={this.submitForm.bind(this)}
       >
-        <h2>Add New Post</h2>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
 
-        <FormsyText ref="titleRef" name="title" floatingLabelText="Title" hintText="Enter your post title." fullWidth={true} />
-        <FormsyText ref="contentRef" name="content" floatingLabelText="Content" hintText="Enter your post content." multiLine={true} rows={4} fullWidth={true} />
+        <FormsyText name="title" floatingLabelText="Title" hintText="Enter your post title." fullWidth={true} />
+        <FormsyText name="content" floatingLabelText="Content" hintText="Enter your post content." multiLine={true} rows={4} fullWidth={true} />
 
         <RaisedButton
           type="submit"

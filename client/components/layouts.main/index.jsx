@@ -7,12 +7,12 @@ import IconButton from 'material-ui/lib/icon-button'
 
 class Layout extends React.Component {
   render() {
-    const {content} = this.props;
+    const {content, title} = this.props;
 
     return (
       <AppCanvas>
         <div>
-          <AppBar title="Mantra Sample"
+          <AppBar title={title}
                   onLeftIconButtonTouchTap={this.goHome.bind(this)}
                   iconElementRight={<IconButton onTouchTap={this.goToAdd.bind(this)}><ContentAdd /></IconButton>} />
 
