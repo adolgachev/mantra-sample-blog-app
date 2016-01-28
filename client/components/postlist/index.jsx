@@ -1,15 +1,24 @@
 import React from 'react';
 
-const PostList = ({posts}) => (
-  <div>
-    <ul>
-      {posts.map(post => (
-        <li key={post._id}>
-          <a href={`/post/${post._id}`}>{post.title}</a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+
+class PostList extends React.Component {
+  render() {
+    const {posts} = this.props;
+
+    return (
+      <List>
+        {posts.map(post => (
+          <ListItem key={post._id} primaryText={post.title} onTouchTap={this.goToPost.bind(this, post._id)} />
+        ))}
+      </List>
+    );
+  }
+
+  goToPost(key) {
+    FlowRouter.go(`/post/${key}`);
+  }
+}
 
 export default PostList;

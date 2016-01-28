@@ -2,28 +2,33 @@ import React from 'react';
 
 import AppBar from 'material-ui/lib/app-bar';
 import AppCanvas from 'material-ui/lib/app-canvas';
-import Paper from 'material-ui/lib/paper';
+import ContentAdd from 'material-ui/lib/svg-icons/content/add';
+import IconButton from 'material-ui/lib/icon-button'
 
-import Navigations from '../navigations/index.jsx';
+class Layout extends React.Component {
+  render() {
+    const {content} = this.props;
 
-const Layout = ({content = () => null }) => (
-  <AppCanvas>
-    <div className="container-fluid">
+    return (
+      <AppCanvas>
+        <div>
+          <AppBar title="Mantra Sample"
+                  onLeftIconButtonTouchTap={this.goHome.bind(this)}
+                  iconElementRight={<IconButton onTouchTap={this.goToAdd.bind(this)}><ContentAdd /></IconButton>} />
 
-      <AppBar title="Mantra Sample" />
+          {content()}
 
-      <div className="row middle-xs">
-        <Navigations />
-      </div>
+        </div>
+      </AppCanvas>
+    );
+  }
 
-      <div className="row middle-xs">
-        <Paper className="col-sm-12">
-          <main className="box">{content()}</main>
-        </Paper>
-      </div>
+  goHome() {
+    FlowRouter.go(`/`);
+  }
 
-    </div>
-  </AppCanvas>
-);
-
+  goToAdd() {
+    FlowRouter.go('/new-post')
+  }
+}
 export default Layout;
